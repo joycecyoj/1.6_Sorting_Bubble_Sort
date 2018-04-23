@@ -3,27 +3,32 @@
 
 
 function bubbleSort(array) {
-  let swapped = false;
-  for(let i = 0; i < array.length-1; i++) {
-    debugger;
-    if(!swapped) {
-      compare(array, i, i + 1)
+  let swapped;
+
+  do {
+    swapped = false
+    for(let i = 0; i < array.length-1; i++) {
+      if (array[i] && array[i+1] && compare(array, i+1, i)) {
+        // console.log('array x', array[i])
+        // console.log('array y', array[i+1])
+        swap(array, array[i], array[i+1]);
+        swapped = true;
+      }
     }
-    else {
-      continue;
-    }
-    }
-    return array;
-  }
+  } while (swapped);
+
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = 1; j < array.length; j++) {
+//       if (compare(array, j-1, j)) {
+//         swap(array, j-1, j);
+//       }
+//     }
+//   }
+  return array;
+}
 
 function compare(array, x, y) {
-  if (array[x] > array[y]) {
-    swap(array, array[x], array[y]);
-    swapped = true;
-  }
-  else {
-    swapped = true;
-  }
+  return (array[x] > array[y] ? true : false);
 }
 
 function swap(array, x, y) {
