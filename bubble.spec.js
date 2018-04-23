@@ -12,7 +12,7 @@ describe('Bubble Sort', function(){
   });
 
   it('bubble sorts an array', function(){
-    expect( bubbleSort('unsortedArr')). toEqual('sortedArr');
+    expect( bubbleSort(unsortedArr)). toEqual(sortedArr);
   });
 
   it('returns arr if only one item long', function(){
